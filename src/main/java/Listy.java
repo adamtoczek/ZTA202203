@@ -30,6 +30,10 @@ public class Listy {
 
         for (int i : tab)
             System.out.println(i);
+
+        for (int i = 0; i < tab.length; i++) {
+            System.out.println(tab[i]);
+        }
     }
 
 }

@@ -1,3 +1,5 @@
+package Day1;
+
 public class Fibonachi {
     public static void main(String[] args) {
         int size = 10;

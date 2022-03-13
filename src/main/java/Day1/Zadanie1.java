@@ -1,3 +1,5 @@
+package Day1;
+
 public class Zadanie1 {
     public static void main(String[] args) {
         System.out.println(isPrimeNumber(-1));

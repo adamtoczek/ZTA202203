@@ -1,3 +1,5 @@
+package Day1;
+
 import java.util.Scanner;
 
 public class Bomba {
@@ -10,20 +12,20 @@ public class Bomba {
 
         if (sec > 0) {
             for (int i = 0 ;i <= sec ; i++) {
-                System.out.println("Bomba wybuchnie za "+ (sec - i));
+                System.out.println("Day1.Bomba wybuchnie za "+ (sec - i));
                 Thread.sleep(1000);
             }
 
 
 
 //            while (sec >=0 ) {
-//                System.out.println("Bomba wybuchnie za "+sec);
+//                System.out.println("Day1.Bomba wybuchnie za "+sec);
 //                Thread.sleep(100);
 //                sec--;
 //            }
 
 //            do {
-//                System.out.println("Bomba wybuchnie za "+sec);
+//                System.out.println("Day1.Bomba wybuchnie za "+sec);
 //                Thread.sleep(100);
 //                sec--;
 //            }

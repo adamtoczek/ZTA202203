@@ -26,7 +26,9 @@ public class Warzywniak {
     }
 }
 interface Owoc {
-    int pobierzCene();
+    default int pobierzCene() {
+        return 0;
+    }
     int pobierzWage();
 }
 abstract class BaseOwoc implements Owoc{
@@ -51,11 +53,6 @@ class Pomidor extends BaseOwoc {
         super(cena, waga, kolor);
     }
 
-    @Override
-    public int pobierzCene() {
-        return 0;
-    }
-
 }
 
 class Pomarancz extends BaseOwoc {
@@ -65,21 +62,11 @@ class Pomarancz extends BaseOwoc {
         super(cena, waga, kolor);
     }
 
-    @Override
-    public int pobierzCene() {
-        return 0;
-    }
-
 }
 class Jablko extends BaseOwoc {
 
     public Jablko(int cena, int waga, Color kolor) {
         super(cena, waga, kolor);
-    }
-
-    @Override
-    public int pobierzCene() {
-        return 0;
     }
 
 }
@@ -88,10 +75,5 @@ class Banan extends BaseOwoc {
 
     public Banan(int cena, int waga, Color kolor) {
         super(cena, waga, kolor);
-    }
-
-    @Override
-    public int pobierzCene() {
-        return 0;
     }
 }

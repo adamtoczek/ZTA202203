@@ -1,10 +1,39 @@
 package Day2;
 
+import java.util.ArrayList;
+import java.util.List;
+
+class Kierownik extends Pracownik {
+    int premia;
+
+    public Kierownik(String imie, String nazwisko, int wiek, int premia) {
+        super(imie, nazwisko, wiek);
+        this.premia = premia;
+    }
+}
 class Pracownik {
     private String imie;
     private String nazwisko;
     private int wiek;
     Pracownik kierownik;
+
+
+
+    public Pracownik(String nazwisko, int wiek) {
+        this.nazwisko = nazwisko;
+        this.wiek = wiek;
+    }
+
+    public Pracownik(String imie, String nazwisko, int wiek) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        setWiek(wiek);
+    }
+
+    public Pracownik(String imie, String nazwisko, int wiek, Pracownik kierownik) {
+        this(imie, nazwisko, wiek);
+        this.kierownik = kierownik;
+    }
 
     public Pracownik getKierownik() {
         return kierownik;
@@ -49,30 +78,22 @@ class Pracownik {
         else
             this.wiek = wiek;
     }
+
+    @Override
+    public String toString() {
+        return "Pracownik{" +
+                "imie='" + imie + '\'' +
+                ", nazwisko='" + nazwisko + '\'' +
+                ", wiek=" + wiek +
+                '}';
+    }
 }
 
 public class Pracownicy {
     public static void main(String[] args) {
-        Pracownik sprzedawca = new Pracownik();
-        Pracownik kasjer = new Pracownik();
-        Pracownik wlasciciel = new Pracownik();
-
-        sprzedawca.setImie("Karol");
-        sprzedawca.setNazwisko("Kowalski");
-        sprzedawca.setWiek(7);
-        sprzedawca.setKierownik(wlasciciel);
-
-
-        kasjer.setImie("Yunus");
-        kasjer.setNazwisko("Patel");
-        kasjer.setWiek(-137);
-        kasjer.setKierownik(wlasciciel);
-
-        wlasciciel.setImie("Michal");
-        wlasciciel.setNazwisko("Malinowski");
-        wlasciciel.setWiek(56);
-
-
+        Kierownik wlasciciel = new Kierownik("Michal", "Malinowski", 56, 300);
+        Pracownik sprzedawca = new Pracownik("Karol", "Kowalski", 17, wlasciciel);
+        Pracownik kasjer = new Pracownik("Yunus", "Patel", -167, wlasciciel);
 
 
 //        System.out.println(sprzedawca.imie + sprzedawca.nazwisko + sprzedawca.wiek);
@@ -81,5 +102,13 @@ public class Pracownicy {
         kasjer.pobierzDane();
         wlasciciel.pobierzDane();
 
+        System.out.println(sprzedawca);
+
+        List<Pracownik> listaPracownikow = new ArrayList<>();
+        listaPracownikow.add(sprzedawca);
+        listaPracownikow.add(kasjer);
+        listaPracownikow.add(wlasciciel);
+
+        System.out.println(listaPracownikow);
     }
 }

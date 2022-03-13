@@ -9,8 +9,8 @@ public class Mnozenie {
         double c = mnozenie(3,4,5);
 
     }
-}
 
+}
 class Dzialania {
     static int mnozenie(int a, int b) {
         System.out.println("int int "+a*b);
@@ -26,3 +26,4 @@ class Dzialania {
         return a*b*c;
     }
 }
+

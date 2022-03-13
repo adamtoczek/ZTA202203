@@ -1,4 +1,4 @@
-package Day1;
+package day1;
 
 public class Fibonachi {
     public static void main(String[] args) {

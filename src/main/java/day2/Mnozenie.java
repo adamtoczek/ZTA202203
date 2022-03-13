@@ -1,6 +1,6 @@
-package Day2;
+package day2;
 
-import static Day2.Dzialania.mnozenie;
+import static day2.Dzialania.mnozenie;
 
 public class Mnozenie {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Day2.warzywniak;
+package day2.warzywniak;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -19,9 +19,11 @@ public class Warzywniak {
         listaOwocow.add(pomidor);
 
         for (BaseOwoc o : listaOwocow) {
-            o.pobierzCene();
+            System.out.println(o.pobierzWage());
         }
 
+        System.out.println(listaOwocow.get(listaOwocow.indexOf(jablko)).pobierzWage());
+//        System.out.println(listaOwocow.get(0));
 
     }
 }
@@ -36,6 +38,11 @@ abstract class BaseOwoc implements Owoc{
     int waga;
     Color kolor;
 
+    @Override
+    public String toString() {
+        return "" +cena ;
+    }
+
     public BaseOwoc(int cena, int waga, Color kolor) {
         this.cena = cena;
         this.waga = waga;
@@ -44,7 +51,7 @@ abstract class BaseOwoc implements Owoc{
 
     @Override
     public int pobierzWage() {
-        return 0;
+        return waga;
     }
 }
 class Pomidor extends BaseOwoc {
